@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AWS Invoice PDF to CSV Data Conversion</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <link href="static/style.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="icon" href="localhost:5000/favicon.ico">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
+    <script type="text/javascript" src="static/scripts.js"></script>
+  </head>
+
+  <body>
+    <section class="main-content">
+      <div class="login-box">
+        <div class="box-header text-center title-bg">
+          <h1
+            class="box-title lead"
+            style="
+            background: #fff;
+            color: #28AFD6;
+            border: #d4d4d4;
+            border-style: none none solid none;
+            border-width: thin;
+            font-weight: 500;
+            font-size: initial;">
+              AWS PDF Invoice to CSV 
+            </h1>
+          </div> 
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-12">
+          <form action="/" class="form-horizontal" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="form-group">
+              <label
+                class="col-md-5 control-label"
+                style="font-size: small;">Select AWS PDF Invoice File(s)
+              </label>
+                <div>
+                  <button
+                    type="button"
+                    style="
+                    background: white;
+                    border: #28AFD6;
+                    border-style: solid;
+                    border-width: thin;
+                    padding: 5px;"> 
+                    <input
+                    type="file"
+                    name="files[]"
+                    multiple="true"
+                    autocomplete="off"
+                    accept="application/pdf"
+                    required />
+                  </button>
+                </div>
+                {% for message in get_flashed_messages() %}
+                  <label class="col-md-6 control-label"
+                  style="
+                  font-size: small;
+                  background: white;
+                  color: #28AFD6;">{{ message }}</label>
+                {% endfor %}
+          </div>
+          <div class="box-footer">
+            <div class="div-parent">
+              <div class="div-button">
+                <a 
+                class="btn btn-info"
+                value="Clear"
+                style="
+                background: #28AFD6;
+                border: #000;
+                font-family: sans-serif;
+                font-size: small;" 
+                onClick="window.location.reload()">
+                Clear
+              </a>
+              <input
+              class="btn btn-info"
+              type="submit"
+              accept="application/pdf" 
+              value="Upload" disabled
+              style="
+                background: #90caf9;
+                border: #64b5f6;
+                font-family: sans-serif;
+                font-size: small;"
+                onClick="this.disabled=true; this.value='Upload'; showDownload(); alert('File(s) Uploaded Successfully!!\nDownload Your Converted Files')"/>
+              <a href="/download_file">
+                <button
+                class="btn btn-info"
+                value="Download"
+                disabled
+                id="showme"
+                style="
+                background: #90caf9;
+                border: #64b5f6;
+                font-family: sans-serif;
+                font-size: small;" >
+                Download
+                </button>
+              </a>
+              </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    </div>
+    <style>
+        .navbar-brand {
+        padding: 0px;
+      }
+      .navbar-brand > img {
+        height: 100%;
+        width: auto;
+      }
+
+      .container {
+        padding: 0px !important;
+        margin: 0px !important;
+        width: 100% !important;
+      }
+
+      .navbar-default {
+        background-color: white;
+        border-color: white;
+        border-radius: 0px !important;
+      }
+      .content {
+        min-height: 450px;
+        padding-top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .main-content {
+        padding-top: 0px;
+      }
+      .box {
+        position: relative;
+        border-radius: 3px;
+        background: #ffffff;
+        margin-bottom: 20px;
+        width: 100%;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+      }
+
+      .box-body {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding: 20px;
+      }
+
+      .file {
+        position: relative;
+        /*overflow: hidden;*/
+        border: none;
+        border-radius: 0;
+        font-size: 15px;
+      }
+      .profile-img .file input {
+        position: absolute;
+        opacity: 0;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .profile-user-img {
+        border: none;
+      }
+
+      .box-header.with-border {
+        border-bottom: 2px solid #dfe3e5;
+      }
+
+      .box-footer {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top: 1px solid #f4f4f4;
+        padding: 10px;
+        background-color: #fff;
+      }
+
+      .div-parent {
+        width: 58% !important;
+      }
+      @media only screen and (max-width: 767px) {
+        .div-parent {
+          width: 100%;
+        }
+      }
+      .div-button {
+        float: right;
+        margin-left: 30px;
+      }
+      .div-button button {
+        width: 100px;
+      }
+
+      .form-horizontal .form-group {
+        margin-bottom: 90px;
+      }
+      .login-box {
+        width: 70%;
+        margin: 13% auto;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+      }
+      .lead {
+        margin-bottom: 5px;
+        padding: 10px;
+        color: #28AFD6;
+      }
+    </style>
+  </body>
+</html>

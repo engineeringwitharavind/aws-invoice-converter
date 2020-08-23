@@ -1,0 +1,104 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand > img {
+  height: 100%;
+  width: auto;
+}
+
+.container {
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100% !important;
+}
+
+.navbar-default {
+  background-color: white;
+  border-color: white;
+  border-radius: 0px !important;
+}
+.content {
+  min-height: 450px;
+  padding-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.main-content {
+  padding-top: 150px;
+}
+.box {
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+}
+
+.box-body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 20px;
+}
+
+.file {
+  position: relative;
+  /*overflow: hidden;*/
+  border: none;
+  border-radius: 0;
+  font-size: 15px;
+}
+.profile-img .file input {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.profile-user-img {
+  border: none;
+}
+
+.box-header.with-border {
+  border-bottom: 2px solid #dfe3e5;
+}
+
+.box-footer {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top: 1px solid #f4f4f4;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.div-parent {
+  width: 65% !important;
+}
+
+.div-button {
+  float: right;
+  /* margin-left: 50rem; */
+}
+.div-button button {
+  width: 100px;
+}
+
+.form-horizontal .form-group {
+  margin-bottom: 90px;
+}
+.login-box {
+  width: 80%;
+  margin: 2% auto;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.9);
+}
+.lead {
+  margin-bottom: 5px;
+  padding: 10px;
+  color: #286090;
+}
