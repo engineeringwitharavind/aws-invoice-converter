@@ -4,6 +4,7 @@ import io
 import pandas as pd
 import PyPDF2
 import tabula
+import dotenv
 
 from datetime import datetime
 from tabula import read_pdf
@@ -157,18 +158,18 @@ def AWS_CM():
         dbDF.reset_index(drop=True, inplace=True)
 
         # Database Connection
-        user = 'ARAVIND'
-        passw = 'REDIN@123'
-        host = 'myrds-aurora.cdiktl1g0cif.ap-south-1.rds.amazonaws.com'
+        user = os.getenv('USERNAME')
+        passw = os.getenv('PASSWORD')
+        host = os.getenv('HOST')
         port = 3306
-        database = 'REDIN_PROJECTS2'
+        database = os.getenv('DATABASE')
 
         mydb = create_engine('mysql+mysqlconnector://' + user + ':' +
                              passw + '@' + host + ':' + str(port) + '/' + database, echo=False)
         mydb.connect()
 
         # Writing the Dataframe to Database
-        dbDF.to_sql(name='REDIN_AWS_PDFCSV_INVCM_FIN',
+        dbDF.to_sql(name=os.getenv('TABLE'),
                     con=mydb, if_exists='append', index=False)
 
         # Return Final Dataframe
