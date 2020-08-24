@@ -3,7 +3,7 @@
 ![MIT](https://img.shields.io/badge/License-MIT-628AFF?style=flat&logo=license)
 ![flask](https://img.shields.io/badge/build-Flask-FF6286?style=flat&logo=flask)
 ![JavaScript](https://img.shields.io/badge/using-JavaScript-FF8E63?style=flat&logo=javascript)
-![icons](https://img.shields.io/badge/icons-fontawesome-EE85EE?style=flat&logo=font-awesome)
+![Python](https://img.shields.io/badge/python-EE85EE?style=flat&logo=python)
 
 A Web Application used to extract data from multiple AWS Invoices (especially Credit Memos) and convert them to a CSV file and store the extracted data in Database of our choice.
 
