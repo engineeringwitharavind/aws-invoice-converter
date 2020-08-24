@@ -24,4 +24,4 @@ pip3 install -r requirements.txt
 
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) Aravind's LinkedIn](https://www.linkedin.com/in/aravind-alpha)
 
-If you like this project, show some love by giving it a ★ 😊
+If you like this project or helped you in any way, show some love by giving it a ★ 😊
