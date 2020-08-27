@@ -7,9 +7,6 @@
 
 A Web Application used to extract data from multiple AWS PDF Invoices (especially Credit Memos) and convert them to a CSV file and store the extracted data in Database of our choice.
 
-#### Disclaimer:
-- This is just meant to be a way to do similar kind of tasks. We can modify the same, based on one's requirement.
-
 ### 🛠 Prerequisites
 
 Make sure you have latest pip version `>= pip 19.3.1` and Install all the dependancies.
