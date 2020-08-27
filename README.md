@@ -3,9 +3,9 @@
 ![MIT](https://img.shields.io/badge/License-MIT-628AFF?style=flat&logo=license)
 ![flask](https://img.shields.io/badge/build-Flask-FF6286?style=flat&logo=flask)
 ![JavaScript](https://img.shields.io/badge/using-JavaScript-FF8E63?style=flat&logo=javascript)
-![icons](https://img.shields.io/badge/icons-fontawesome-EE85EE?style=flat&logo=font-awesome)
+![Python](https://img.shields.io/badge/python-EE85EE?style=flat&logo=python)
 
-A Web Application used to extract data from multiple AWS Invoices (especially Credit Memos) and convert them to a CSV file and store the extracted data in Database of our choice.
+A Web Application used to extract data from multiple AWS PDF Invoices (especially Credit Memos) and convert them to a CSV file and store the extracted data in Database of our choice.
 
 #### Disclaimer:
 - This is just meant to be a way to do similar kind of tasks. We can modify the same, based on one's requirement.
@@ -24,4 +24,4 @@ pip3 install -r requirements.txt
 
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) Aravind's LinkedIn](https://www.linkedin.com/in/aravind-alpha)
 
-If you like this project, show some love by giving it a ★ 😊
+If you like this project or helped you in any way, show some love by giving it a ★ 😊

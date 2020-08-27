@@ -215,6 +215,6 @@ def html_table():
     return send_file(output, attachment_filename='Statements.xlsx', as_attachment=True)
 
 
-# Calling the Application
+# Calling the Main function
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
